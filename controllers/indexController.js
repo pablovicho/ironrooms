@@ -5,6 +5,10 @@ exports.home = async(req,res) => {
     res.render("home")
 }
 
+exports.perfil = async(req,res) => {
+    res.render("perfil")
+}
+
 exports.viewLogin = async(req,res) => {
     res.render("login")
 }
@@ -85,8 +89,21 @@ exports.login = async (req, res) => {
 		mensaje: "LO LOGRAMOS CARAJO"
 	}
 	// 5. REDIRECCIONAR AL HOME
-	res.redirect("/users/profile")
+	res.redirect("/perfil")
 	} catch (error) {
 		console.log(error)	
 	}
+}
+
+//logout
+exports.logout = async (req, res)  => {
+	req.session.destroy((error) => {
+		// SE EVALUÁ SI HUBO UN ERROR AL BORRAR LA COOKIE
+		if(error){
+			console.log(error)
+			return
+		}
+		// REDIRECCIONAR HACIA LA PÁGINA DE HOME
+		res.redirect("/")
+	})
 }

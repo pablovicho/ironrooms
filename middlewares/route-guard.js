@@ -1,7 +1,7 @@
 // ÁREAS PRIVADAS - EL USUARIO DEBE ESTAR LOGGEADO PARA ACCEDER
 const usuarioLoggeado = (req, res, next) => {
 	if(!req.session.currentUser){
-		res.redirect("/login")
+		res.redirect("/")
 		return
 	}
 	// SI SÍ ESTÁ LOGGEADO ENVIARLO A LA SIGUIENTE FUNCIÓN (CONTROLLER)
