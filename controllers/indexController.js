@@ -88,8 +88,8 @@ exports.login = async (req, res) => {
 		email: foundUser.email,
 		mensaje: "LO LOGRAMOS CARAJO"
 	}
-	// 5. REDIRECCIONAR AL HOME
-	res.redirect("/perfil")
+	// 5. REDIRECCIONAR
+	res.redirect("/rooms")
 	} catch (error) {
 		console.log(error)	
 	}
