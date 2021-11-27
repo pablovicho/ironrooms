@@ -89,7 +89,7 @@ exports.login = async (req, res) => {
 		mensaje: "LO LOGRAMOS CARAJO"
 	}
 	// 5. REDIRECCIONAR
-	res.redirect("/rooms")
+	res.redirect("/")
 	} catch (error) {
 		console.log(error)	
 	}
